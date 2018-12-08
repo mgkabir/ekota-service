@@ -1,6 +1,7 @@
 package io.kabir.ekota.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.kabir.ekota.tenant.Tenant;
 
 import javax.persistence.*;
 import java.util.List;
@@ -40,6 +41,18 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id",
                     referencedColumnName = "id"))
     private List<Role> roles;
+
+    @ManyToOne
+    @JoinColumn(name = "tenant_id")
+    private Tenant tenant;
+
+    public Tenant getTenant() {
+        return tenant;
+    }
+
+    public void setTenant(Tenant tenant) {
+        this.tenant = tenant;
+    }
 
     public Long getId() {
         return id;
