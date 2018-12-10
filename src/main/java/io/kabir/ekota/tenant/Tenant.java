@@ -1,5 +1,6 @@
 package io.kabir.ekota.tenant;
 
+import io.kabir.ekota.account.Account;
 import io.kabir.ekota.user.User;
 
 import javax.persistence.*;
@@ -17,6 +18,9 @@ public class Tenant {
 
     @OneToMany(mappedBy = "tenant")
     private Set<User> users = new HashSet<>();
+
+    @OneToMany(mappedBy = "tenant")
+    private Set<Account> accounts = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -40,5 +44,13 @@ public class Tenant {
 
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    public Set<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Set<Account> accounts) {
+        this.accounts = accounts;
     }
 }
