@@ -19,6 +19,9 @@ public class Account {
     @JoinColumn(name = "tenant_id")
     private Tenant tenant;
 
+    /*Default Constructor*/
+    public Account() {}
+
     public Account(String name, String mobileNumber) {
         this.name = name;
         this.mobileNumber = mobileNumber;

@@ -30,6 +30,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/actuator/**").permitAll()
+                .antMatchers("/ekota/**").permitAll() // Temp for development purpose
                 .anyRequest().authenticated();
     }
 }

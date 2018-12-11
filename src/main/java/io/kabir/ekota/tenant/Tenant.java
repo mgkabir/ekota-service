@@ -1,5 +1,6 @@
 package io.kabir.ekota.tenant;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.kabir.ekota.account.Account;
 import io.kabir.ekota.user.User;
 
@@ -17,9 +18,11 @@ public class Tenant {
     private String name;
 
     @OneToMany(mappedBy = "tenant")
+    @JsonIgnore
     private Set<User> users = new HashSet<>();
 
     @OneToMany(mappedBy = "tenant")
+    @JsonIgnore
     private Set<Account> accounts = new HashSet<>();
 
     public Long getId() {
