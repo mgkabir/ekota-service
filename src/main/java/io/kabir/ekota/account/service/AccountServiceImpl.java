@@ -24,4 +24,9 @@ public class AccountServiceImpl implements AccountService {
         accountRepository.findAll().forEach(accounts::add);
         return accounts;
     }
+
+    @Override
+    public void saveAccount(Account account) {
+        accountRepository.save(account);
+    }
 }

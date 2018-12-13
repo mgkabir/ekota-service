@@ -8,4 +8,6 @@ public interface AccountService {
     List<Account> findAccountByTenantId(Long tenantId);
 
     List<Account> findAllAccounts();
+
+    void saveAccount(Account account);
 }

@@ -25,6 +25,7 @@ public class Account {
     public Account(String name, String mobileNumber) {
         this.name = name;
         this.mobileNumber = mobileNumber;
+        this.tenant = new Tenant();
     }
 
     public Long getId() {
