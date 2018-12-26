@@ -9,6 +9,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "app_role")
 public class Role {
+    public static final String ROLE_USER = "ROLE_USER";
+    public static final String ROLE_TENANT_ADMIN = "ROLE_TENANT_ADMIN";
+    public static final String ROLE_SYS_ADMIN = "ROLE_SYS_ADMIN";
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

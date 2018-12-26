@@ -9,5 +9,5 @@ public interface AccountService {
 
     List<Account> findAllAccounts();
 
-    void saveAccount(Account account);
+    Account saveAccount(Account account);
 }
